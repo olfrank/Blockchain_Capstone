@@ -9,17 +9,17 @@ import "./Oraclize.sol";
 
 contract Ownable {
     
-    address private owner;
+    address private _owner;
     function getOwner()public returns(adddress){
-        return owner;
+        return _owner;
     }
     
     constructor(){
-        owner = msg.sender;
+        _owner = msg.sender;
     }
     
     modifier onlyOwner(){
-        require(msg.sender == owner, "you must be the owner of the contract to enter this function");
+        require(msg.sender == _owner, "you must be the owner of the contract to enter this function");
         _;
     }
    
@@ -28,18 +28,65 @@ contract Ownable {
     event ownershipTransfered (address newOwner, address oldOwner);
 
     function transferOwnership(address _newOwner)public onlyOwner{
-        address _oldOwner = owner;
-        _newOwner = owner;
+        address _oldOwner = _owner;
+        _newOwner = _owner;
         emit ownershipTransfered(_newOwner, _oldOwner);
     }
 }
 
-//  TODO's: Create a Pausable contract that inherits from the Ownable contract
-//  1) create a private '_paused' variable of type bool
-//  2) create a public setter using the inherited onlyOwner modifier 
-//  3) create an internal constructor that sets the _paused variable to false
-//  4) create 'whenNotPaused' & 'paused' modifier that throws in the appropriate situation
-//  5) create a Paused & Unpaused event that emits the address that triggered the event
+
+
+
+
+
+
+
+contract Pausable is Ownable{
+    bool private _paused;
+
+
+    constructor() {
+        _paused = false;
+    }
+
+    event Paused(address initiator, bool value);
+    event UnPaused(address initiator, bool value);
+
+    function setPausable(bool _value) public onlyOwner{
+        require(_value == bool, "you must input a boolean value");
+
+        if(_value){
+            _paused = _value;
+            emit Paused(msg.sender, _value);
+        }else{
+            _paused = _value;
+            emit UnPaused(msg.sender, _value);
+        }
+        
+    }
+
+    function getPauseStatus() external view returns(bool status){
+        status = _paused;
+        return status;
+    }
+
+    modifier whenNotPaused(){
+        require(!_paused, "The contract is currently paused, this function is not callable");
+        _;
+    }
+    modifier paused(){
+        require(_paused, "The contract is currently un paused");
+        _;
+    }
+}
+
+
+
+
+
+
+
+
 
 contract ERC165 {
     bytes4 private constant _INTERFACE_ID_ERC165 = 0x01ffc9a7;
