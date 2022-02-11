@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Eu Alonira';
+    -webkit-font-family: 'Eu Alonira';
+    src: url('./client/fonts/Eu-Alonira/EuAlonira.eot');
+    src: url('./client/fonts/Eu-Alonira/EuAlonira.eot') format('embedded-opentype'),
+        url('./client/fonts/Eu-Alonira/EuAlonira.woff2') format('woff2'),
+        url('./client/fonts/Eu-Alonira/EuAlonira.woff') format('woff'),
+        url('./client/fonts/Eu-Alonira/EuAlonira.ttf') format('truetype'),
+        url('./client/fonts/Eu-Alonira/eu-alonira.personal-use.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+body{
+    
+    /* overflow: hidden; */
+    /* background-image: url('./client/images/houseWhite.jpeg'); 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    height: 100%; */
+    /* background-color: rgb(0, 0, 0); */
+    height: 100%;
+    width: 100%;
+    margin-top: 0;
+    font-family: Eu Alonira;
+    background-color: #272727;
+    
+    
+
+}
+
+
+
+.heroSection{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: Eu Alonira;
+    /* background-image: url('./client/images/houseWhite.jpeg'); */
+   height: 100vh;
+   background-image: url('./client/images/houseWhite.jpeg'); 
+   background-repeat: no-repeat;
+   background-position: top;
+   background-size: cover;
+   overflow: hidden;
+   width: 75%;
+   float: left;
+   background-attachment: fixed;
+   z-index: 3;
+   
+ 
+
+}
+
+.heroSection > h1{
+    align-items: center;
+    display: flex;
+    position: relative;
+    font-family: Eu Alonira;
+    margin-top: -12.5%;
+    margin-left: 40%;
+    color: #272727;
+    position: fixed;
+    z-index:3;
+
+}
+
+
+.introSection{
+    height: 100vh;
+    width: 100%;
+    float: right;
+    background: transparent;
+    color: #ecebe6;
+    margin-top: 0rem;
+    align-items: center;
+    /* overflow: hidden; */
+    position: relative;
+    z-index:1;
+}
+
+.introContainer{
+    /* display: flex; */
+    width: 20%;
+    height: 80%;
+    margin: 0%;
+    word-spacing: 10px;
+    letter-spacing: 1px;
+    position: relative;
+    float: right;
+    z-index: 0;
+    
+}
+.introContainer>p{
+    font-size: 12px;
+    position: relative;
+}
+.introContainer>h2{
+    font-size: 16px;
+    position: relative;
+}
+
+
+
+.explainSection{
+    height: 100vh;
+    width: 100%;
+    background-color: #d1d0ca;
+    color: rgb(39, 39, 39);
+    margin-top: 0rem;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    z-index:3;
+}
+
+.explainContainer{
+    /* display: flex; */
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+    word-spacing: 10px;
+    letter-spacing: 1px;
+}

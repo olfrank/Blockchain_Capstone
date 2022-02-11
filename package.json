@@ -1,0 +1,20 @@
+{
+  "name": "capstone",
+  "version": "1.0.0",
+  "description": "Decentralised Property Listing Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "solc": "^0.8.11",
+    "solc-js": "^1.0.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
