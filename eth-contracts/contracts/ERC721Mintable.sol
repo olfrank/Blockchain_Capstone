@@ -75,7 +75,7 @@ contract Pausable is Ownable{
         _;
     }
     modifier paused(){
-        require(_paused, "The contract is currently un paused");
+        require(_paused, "The contract is currently unpaused");
         _;
     }
 }
@@ -124,6 +124,12 @@ contract ERC165 {
     }
 }
 
+
+
+
+
+
+
 contract ERC721 is Pausable, ERC165 {
 
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
@@ -164,11 +170,14 @@ contract ERC721 is Pausable, ERC165 {
 
     function balanceOf(address owner) public view returns (uint256) {
         // TODO return the token balance of given address
+        return _ownedTokensCount[owner].current();
+
         // TIP: remember the functions to use for Counters. you can refresh yourself with the link above
     }
 
     function ownerOf(uint256 tokenId) public view returns (address) {
         // TODO return the owner of the given tokenId
+        return _tokenOwner[tokenId];
     }
 
 //    @dev Approves another address to transfer the given token ID

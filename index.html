@@ -10,16 +10,22 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <div class = "heroSection ">
-        <h1 class = "animate__animated animate__fadeInLeft">
+        <div id= "expandable" class = "animate__animated animate__fadeInLeft">
             zk properties
-        </h1>
+        </div>
     </div>
 
     <div class = "introSection">
+        
         <div class = "introContainer">
+            <!-- <img src="./client/images/buildingsStreet.jpeg" alt=""> -->
             <h2><u>about.</u> </h2>
             
             <p>zk properties is a decentralised property listing application backed by the ethereum blockchain. we tokenise property listing, making the purchasing of an asset fast, secure, and with fewer hidden costs.</p>    
@@ -32,19 +38,29 @@
         <div class = "explainContainer">
             <h2><u>how it works. </u> </h2>
             
-            <p>our available listing are on opensea, an open source NFT marketplace. </p>
-            <p>to purchase an asset on opensea visit this link</p>    
-            <p>through the use zkSNARKS we are able securely prove the ownership of a property without the need for a third party intermediary. Making the process cheaper.</p>
+            <p>our available listing are on opensea, an open source NFT marketplace. 
+                through the use zkSNARKS we are able securely prove the ownership of a property without the need for a third party intermediary. Making the process cheaper.</p>
         </div>
 
     </div>
 
 
 
-
+    <script>
+       
+    
+        $(window).scroll(function() {
+    
+        var mass = Math.min(20, 1+0.005*$(this).scrollTop());
+    
+        $('#expandable').css('transform', 'scale(' + mass + ')');
+    });
+  
+    </script>
 
 
 
 
 </body>
+
 </html>
