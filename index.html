@@ -18,7 +18,7 @@
 <body>
     <div class = "heroSection ">
         <div id= "expandable" class = "animate__animated animate__fadeInLeft">
-            zk properties
+            zk properties.
         </div>
     </div>
 
@@ -49,12 +49,19 @@
     <script>
        
     
-        $(window).scroll(function() {
+    //     $(window).scroll(function() {
     
-        var mass = Math.min(20, 1+0.005*$(this).scrollTop());
+    //     var mass = Math.min(20, 1+0.005*$(this).scrollTop());
     
-        $('#expandable').css('transform', 'scale(' + mass + ')');
-    });
+    //     $('#expandable').css('transform', 'scale(' + mass + ')');
+    // });
+
+    $(window).scroll(function () {
+        // var mass = Math.min(20, 1+0.005*$(this).scrollTop());
+    $(".heroSection").css("background-position","50% " + ($(this).scrollTop() / 2) + "px");
+    $('#expandable').css('transform', 'scale(' + ($(this).scrollTop() / 2) + ')');
+
+});
   
     </script>
 
